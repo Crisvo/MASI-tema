@@ -1,4 +1,4 @@
-package com.corden.masi_tema_seminar.ui.legendre;
+package com.corden.masi_tema_seminar.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

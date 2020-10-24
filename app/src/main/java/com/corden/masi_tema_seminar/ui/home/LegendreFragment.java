@@ -1,4 +1,4 @@
-package com.corden.masi_tema_seminar.ui.legendre;
+package com.corden.masi_tema_seminar.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

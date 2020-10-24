@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.corden.masi_tema_seminar.ui.legendre.LegendreFragment"
+        android:name="com.corden.masi_tema_seminar.ui.home.LegendreFragment"
         android:label="@string/legendre"
         tools:layout="@layout/fragment_legendre" />
 
