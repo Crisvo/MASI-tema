@@ -17,10 +17,8 @@ public class Legendre {
     private boolean checkConditions() {
         if (p % 2 == 0)
             return false;
-        for (int i = 3; i <= Math.sqrt(p); i++) {
-            if (p % i == 0)
-                return false;
-        }
+        if(!NumHelper.isPrime(p))
+            return false;
         if (a >= p || a < 0) {
             a %= p;
         }

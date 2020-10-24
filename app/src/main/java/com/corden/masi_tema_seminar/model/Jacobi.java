@@ -1,5 +1,7 @@
 package com.corden.masi_tema_seminar.model;
 
+import com.corden.masi_tema_seminar.exception.JacobiException;
+
 public class Jacobi {
     private int a;
     private int n;
@@ -13,7 +15,10 @@ public class Jacobi {
         return (n > a && a > 0 && n % 2 == 1);
     }
 
-    public int calculate(){
+    public int calculate() throws JacobiException {
+        if(!checkInitialConditions()){
+            throw new JacobiException();
+        }
         int t = 1;
         while (a != 0) {
             while (a % 2 == 0) {
