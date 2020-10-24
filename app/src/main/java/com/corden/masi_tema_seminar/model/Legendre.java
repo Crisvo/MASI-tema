@@ -1,6 +1,9 @@
 package com.corden.masi_tema_seminar.model;
 
-import java.lang.Math;
+import com.corden.masi_tema_seminar.exception.LegendreException;
+import com.corden.masi_tema_seminar.helper.NumHelper;
+
+import java.util.List;
 
 public class Legendre {
     int a;
@@ -18,18 +21,52 @@ public class Legendre {
             if (p % i == 0)
                 return false;
         }
+        if (a >= p || a < 0) {
+            a %= p;
+        }
         return true;
     }
 
-    public Integer calculateLegendreSymbol() {
+    public int calculateLegendreSymbol() throws LegendreException {
         if (!checkConditions())
-            return null;
-        int condition = a % p;
-        if (condition == 0) {
-            return 0;
+            throw new LegendreException();
+        switch (a) {
+            case 0:
+            case 1:
+                return a;
+            case 2:
+                if (p % 8 == 1 || p % 8 == 7)
+                    return 1;
+                else
+                    return -1;
         }
-        // verificam daca a este rest patratic %p
-        return (int)(Math.pow(a, (p - 1) / 2) % p);
+        if (a == p - 1) {
+            if (p % 4 == 1) {
+                return 1;
+            }else
+                return -1;
+        }
+        if(!NumHelper.isPrime(a)){
+            List<Integer> factors = NumHelper.factoriseNum(a);
+            int prod = 1;
+            for(Integer factor : factors){
+                a = factor;
+                prod*=this.calculateLegendreSymbol();
+            }
+            return prod;
+        }else{
+            if (((p - 1) / 2) % 2 == 0 || ((a - 1) / 2) % 2 == 0){
+                int aux = a;
+                a = p;
+                p = aux;
+                return calculateLegendreSymbol();
+            } else{
+                int aux = a;
+                a = p;
+                p = aux;
+                return (-1) * calculateLegendreSymbol();
+            }
+        }
     }
 
     public int getA() {
