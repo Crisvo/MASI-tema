@@ -1,16 +1,16 @@
-package com.corden.masi_tema_seminar.ui.home;
+package com.corden.masi_tema_seminar.ui.jacobi;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class JacobiViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public JacobiViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("Jacobi fragment");
     }
 
     public LiveData<String> getText() {

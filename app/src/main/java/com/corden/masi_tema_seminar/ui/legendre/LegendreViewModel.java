@@ -1,16 +1,16 @@
-package com.corden.masi_tema_seminar.ui.dashboard;
+package com.corden.masi_tema_seminar.ui.legendre;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class LegendreViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public LegendreViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("Legendre fragment");
     }
 
     public LiveData<String> getText() {

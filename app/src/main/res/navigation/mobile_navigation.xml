@@ -7,19 +7,14 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.corden.masi_tema_seminar.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.corden.masi_tema_seminar.ui.legendre.LegendreFragment"
+        android:label="@string/legendre"
+        tools:layout="@layout/fragment_legendre" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.corden.masi_tema_seminar.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.corden.masi_tema_seminar.ui.jacobi.JacobiFragment"
+        android:label="@string/jacobi"
+        tools:layout="@layout/fragment_jacobi" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.corden.masi_tema_seminar.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>
